@@ -3,14 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Armand Duijn</title>
 
     <style>
         body {
-            margin: 30px;
+            margin: 50px;
             padding: 0;
-            background: #3B3737;
+            background: #000;
             font-family: monaco, Consolas, "Lucida Console", monospace;
             color: #FFF;
         }
@@ -18,26 +17,75 @@
         * { box-sizing: border-box }
 
         h1 {
-            font-size: 24px;
-            font-weight: 500;
-            line-height: 32px;
-        }
-
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+            font-size: 42px;
+            font-weight: 400;
+            margin-bottom: 32px;
         }
 
         a {
             text-decoration: none;
-            font-size: 14px;
-            line-height: 20px;
-            color: inherit;
+            color: #FFF;
+            position: relative;
         }
 
-        a.icon {
-            line-height: 32px;
+        a:hover {
+            text-decoration: underline;
+        }
+
+        dt {
+            background-color: #FFF;
+            margin-top: 30px;
+            color: #000;
+            text-transform: uppercase;
+            float: left;
+        }
+
+        dt, dd {
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        dt:first-child {
+            margin-top: 0;
+        }
+
+        dt+dd {
+            margin-top: 30px;
+        }
+
+        dd {
+            margin-left: 125px;
+        }
+
+        @media (max-width: 500px)  {
+            dt {
+                float: none;
+                display: inline-block;
+            }
+
+            dd {
+                margin-left: 0;
+            }
+
+            dt+dd {
+                margin-top: 10px;
+            }
+        }
+
+        .muted {
+            opacity: 0.3;
+        }
+
+        a:before {
+            content: '↗';
+            position: absolute;
+            left: -25px;
+            opacity: 0;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        a:hover:before {
+            opacity: 1;
         }
     </style>
 </head>
@@ -45,12 +93,27 @@
 <body>
     <h1>Armand Duijn</h1>
 
-    <ul>
-        <li><a href="mailto:armand@duijn.space" class="icon icon-mail">armand@duijn.space</a></li>
-        <li><a href="https://keybase.io/armand" class="icon icon-keybase" target="_blank">Keybase</a></li>
-        <li><a href="https://github.com/armandduijn" class="icon icon-github" target="_blank">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/armandduijn" class="icon icon-linkedin" target="_blank">LinkedIn</a></li>
-        <li><a href="https://stackoverflow.com/users/3512012/armand" class="icon icon-stackoverflow" target="_blank">StackOverflow</a></li>
-    </ul>
+    <dl>
+        <dt>Contact</dt>
+        <dd>
+            <a href="mailto:armand@duijn.space">armand@duijn.space</a>
+        </dd>
+        <dd>
+            <a href="https://keybase.io/armand" target="_blank">Keybase</a> <span class="muted">@armand</span>
+        </dd>
+        <dt>Links</dt>
+        <dd>
+            <a href="https://github.com/armandduijn" target="_blank">GitHub</a> <span class="muted">@armandduijn</span>
+        </dd>
+        <dd>
+            <a href="https://www.kaggle.com/armandduijn" target="_blank">Kaggle</a> <span class="muted">@armandduijn</span>
+        </dd>
+        <dd>
+            <a href="https://linkedin.com/in/armandduijn" target="_blank">LinkedIn</a>
+        </dd>
+        <dd>
+            <a href="https://stackoverflow.com/users/3512012/armand" target="_blank">StackOverflow</a>
+        </dd>
+    </dl>
 </body>
 </html>
